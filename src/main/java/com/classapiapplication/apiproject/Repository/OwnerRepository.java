@@ -1,0 +1,14 @@
+package com.classapiapplication.apiproject.Repository;
+
+import com.classapiapplication.apiproject.Entity.Owner;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.Optional;
+
+public interface OwnerRepository extends JpaRepository<Owner, Long> {
+    Owner findByname(String name);
+    Optional<Owner> findByid(Long id);
+
+    Boolean existsByid(Long id);
+
+}
